@@ -24,12 +24,23 @@ function findSteps(id) {
 
 };
 
+// Add is DONE
 function add(scheme) {
-
+  return db("schemes")
+  .insert(scheme, "id")
+  .then(([id]) => {
+      return findById(id);
+  });
 };
 
+//Update is 
 function update(changes, id) {
-
+  return db("scheme")
+        .where({ id })
+        .update(changes)
+        .then(() => {
+            return findById(id);
+        });
 };
 
 function remove(id) {
