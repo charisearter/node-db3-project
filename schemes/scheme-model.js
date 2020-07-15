@@ -6,7 +6,8 @@ module.exports = {
   findSteps,
   add,
   update,
-  remove
+  remove,
+  addStep
 }
 
 // GET all DONE
@@ -35,7 +36,16 @@ function add(scheme) {
   .insert(scheme, "id")
   .then(([id]) => {
       return findById(id);
+  })
+  .catch(error => {
+    console.log(error)
   });
+};
+
+// STRETCH Add steps is DONE
+function addStep(step, scheme_id) {
+  return db("steps")
+  .insert({...step, scheme_id: scheme_id})
 };
 
 //Update is DONE
