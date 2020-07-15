@@ -20,6 +20,7 @@ function findById(id) {
   return db("schemes").where({ id }).first();
 };
 
+//GET steps DONE
 function findSteps(id) {
   return db("schemes")
   .join("steps", "schemes.id", "steps.scheme_id")
