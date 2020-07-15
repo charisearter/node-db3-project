@@ -33,9 +33,9 @@ function add(scheme) {
   });
 };
 
-//Update is 
+//Update is DONE
 function update(changes, id) {
-  return db("scheme")
+  return db("schemes")
         .where({ id })
         .update(changes)
         .then(() => {
