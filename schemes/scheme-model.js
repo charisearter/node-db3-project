@@ -43,6 +43,10 @@ function update(changes, id) {
         });
 };
 
+//Remove is 
 function remove(id) {
+  return db('schemes')
+  .where('id', id)
+  .del();
 
 };
